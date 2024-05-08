@@ -1,3 +1,5 @@
+package com.example.trivia_app;
+
 public class TriviaQuestion {
     String question;
     String[] options;

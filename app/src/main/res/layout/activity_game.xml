@@ -15,7 +15,13 @@
         tools:layout_editor_absoluteY="315dp">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
@@ -28,12 +34,6 @@
 
         <RadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />

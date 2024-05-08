@@ -1,5 +1,5 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+package com.example.trivia_app;
+
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class GetQuestions {
     public ArrayList<TriviaQuestion> questions;
 
-    public GetQuestions() {
+    public ArrayList<TriviaQuestion> getQuestions() {
         try {
             questions = new ArrayList<TriviaQuestion>();
 
@@ -22,11 +22,15 @@ public class GetQuestions {
                 int answer = Integer.parseInt(inFile.nextLine());
                 TriviaQuestion tq = new TriviaQuestion(question, choice1, choice2, choice3, choice4, answer);
                 questions.add(tq);
+
             }
+
 
         } catch (java.io.FileNotFoundException e) {
             System.out.println("File not found");
         }
+
+        return questions;
     }
 
     public static void main(String[] args) {
