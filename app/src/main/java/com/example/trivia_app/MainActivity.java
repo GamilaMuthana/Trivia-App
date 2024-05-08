@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ArrayList<TriviaQuestion> questionsList = new ArrayList<TriviaQuestion>();
-//        questionsList = GetQuestions.
-
+        ArrayList<TriviaQuestion> questionsList = new ArrayList<>();
+        
+       
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
