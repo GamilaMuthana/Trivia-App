@@ -3,18 +3,12 @@ package com.example.trivia_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,8 +34,26 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void sportsGame(View v){
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("category", "sports");
+        startActivity(intent);
+    }
 
-        Intent intent = new Intent(this, Game.class);
+    public void artGame(View v){
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("category", "arts");
+        startActivity(intent);
+    }
+
+    public void moviesGame(View v){
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("category", "movies");
+        startActivity(intent);
+    }
+
+    public void musicGame(View v){
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("category", "music");
         startActivity(intent);
     }
 

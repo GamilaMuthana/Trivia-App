@@ -22,7 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
-        android:text="Movies"
+        android:text="@string/movies"
+        android:onClick="moviesGame"
         app:layout_constraintBottom_toTopOf="@+id/artButton"
         app:layout_constraintEnd_toStartOf="@+id/musicButton"
         app:layout_constraintHorizontal_bias="0.596"
@@ -33,7 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="116dp"
-        android:text="Art"
+        android:text="@string/art"
+        android:onClick="artGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sportsButton"
         app:layout_constraintHorizontal_bias="0.605"
@@ -45,18 +47,19 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="52dp"
-        android:text="Music"
+        android:text="@string/music"
+        android:onClick="musicGame"
         app:layout_constraintBottom_toTopOf="@+id/sportsButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/sportsButton"
-        android:onClick="sportsGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="96dp"
         android:layout_marginBottom="116dp"
-        android:text="Sports"
+        android:text="@string/sports"
+        android:onClick="sportsGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
