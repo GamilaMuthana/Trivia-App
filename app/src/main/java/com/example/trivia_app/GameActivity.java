@@ -42,11 +42,11 @@ public class GameActivity extends AppCompatActivity {
             inFile = new Scanner(getResources().openRawResource(R.raw.sports));
         } else if (category.equals("movies")) {
             inFile = new Scanner(getResources().openRawResource(R.raw.entertainment));
-        } /*else if (category.equals("arts")) {
-            Scanner inFile = new Scanner(getResources().openRawResource(R.raw.arts));
+        } else if (category.equals("arts")) {
+            inFile = new Scanner(getResources().openRawResource(R.raw.art));
         } else if (category.equals("music")) {
-            Scanner inFile = new Scanner(getResources().openRawResource(R.raw.music));
-        }*/
+            inFile = new Scanner(getResources().openRawResource(R.raw.music));
+        }
         assert inFile != null;
         while (inFile.hasNext()) {
             String question = inFile.nextLine();
@@ -109,6 +109,10 @@ public class GameActivity extends AppCompatActivity {
 
     }
     public void nextQuestion(View v){
+        if (selectedAnswerIndex == -1) {
+            return;
+        }
+
         //TO DO: if selectedAnswerIndex is the correct answer: correctAnswersCount++;
         if (selectedAnswerIndex == questionsList.get(currentQuestionIndex).getCorrectAnswerIndex()){
             correctAnswersCount++;
