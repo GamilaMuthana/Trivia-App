@@ -20,6 +20,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         String score = getIntent().getStringExtra("correctAnswersCount");
+        int scoreInt = Integer.parseInt(score);
         score = score + "/10";
         TextView tv = findViewById(R.id.scoreDisplay);
         tv.setText(score);
