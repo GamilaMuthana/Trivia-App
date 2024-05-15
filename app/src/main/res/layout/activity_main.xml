@@ -10,10 +10,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Hello World!"
+        android:layout_marginTop="124dp"
+        android:text="Four Square Trivia App"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,10 +46,10 @@
         android:id="@+id/musicButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="80dp"
         android:layout_marginBottom="52dp"
-        android:text="@string/music"
         android:onClick="musicGame"
+        android:text="@string/music"
         app:layout_constraintBottom_toTopOf="@+id/sportsButton"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -56,10 +57,10 @@
         android:id="@+id/sportsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="80dp"
         android:layout_marginBottom="116dp"
-        android:text="@string/sports"
         android:onClick="sportsGame"
+        android:text="@string/sports"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
