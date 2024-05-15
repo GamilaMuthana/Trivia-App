@@ -24,6 +24,22 @@ public class ResultActivity extends AppCompatActivity {
         score = score + "/10";
         TextView tv = findViewById(R.id.scoreDisplay);
         tv.setText(score);
+        String face = "";
+        if(scoreInt < 4){
+            face = "☹️";
+
+        }
+        else if (scoreInt < 7){
+            face = "🫤";
+        }
+        else if (scoreInt < 10){
+            face = "😃";
+        }
+        else {
+            face = "🥳";
+        }
+        TextView tv2 = findViewById(R.id.smileyFace);
+        tv2.setText(face);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
