@@ -7,4 +7,9 @@
     <string name="music">Music</string>
     <string name="sports">Sports</string>
     <string name="question_placeholder">question placeholder</string>
+    <string name="x_10">x/10</string>
+    <string name="option0">option0</string>
+    <string name="option1">option1</string>
+    <string name="option2">option2</string>
+    <string name="option3">option3</string>
 </resources>

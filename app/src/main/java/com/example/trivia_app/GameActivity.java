@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +19,11 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class GameActivity extends AppCompatActivity {
 
     int selectedAnswerIndex = -1; //to keep track of the selected answer
-    int correctAnswersCount = 0; //to keep a count of the questions answered correctly
+//    int correctAnswersCount = 0; //to keep a count of the questions answered correctly
     int currentQuestionIndex = 0; //the index of the question being displayed
 
     ArrayList<TriviaQuestion> questionsList = new ArrayList<>();
@@ -33,19 +35,30 @@ public class GameActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_game);
 
-//        Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_SHORT).show();
+        selectedAnswerIndex = -1; //to keep track of the selected answer
+//        correctAnswersCount = 0; //to keep a count of the questions answered correctly
+        currentQuestionIndex = 0; //the index of the question being displayed
+
+        questionsList = new ArrayList<>();
+        allQuestions = new ArrayList<>();
+
         String category = getIntent().getStringExtra("category");
 
         Scanner inFile = null;
         assert category != null;
-        if (category.equals("sports")) {
-            inFile = new Scanner(getResources().openRawResource(R.raw.sports));
-        } else if (category.equals("movies")) {
-            inFile = new Scanner(getResources().openRawResource(R.raw.entertainment));
-        } else if (category.equals("arts")) {
-            inFile = new Scanner(getResources().openRawResource(R.raw.art));
-        } else if (category.equals("music")) {
-            inFile = new Scanner(getResources().openRawResource(R.raw.music));
+        switch (category) {
+            case "sports":
+                inFile = new Scanner(getResources().openRawResource(R.raw.sports));
+                break;
+            case "movies":
+                inFile = new Scanner(getResources().openRawResource(R.raw.entertainment));
+                break;
+            case "arts":
+                inFile = new Scanner(getResources().openRawResource(R.raw.art));
+                break;
+            case "music":
+                inFile = new Scanner(getResources().openRawResource(R.raw.music));
+                break;
         }
         assert inFile != null;
         while (inFile.hasNext()) {
@@ -70,16 +83,7 @@ public class GameActivity extends AppCompatActivity {
             questionsList.add(allQuestions.get(i));
         }
 
-        TextView tv = findViewById(R.id.questionDisplay);
-        RadioButton button0 = findViewById(R.id.radioButton0);
-        RadioButton button1 = findViewById(R.id.radioButton1);
-        RadioButton button2 = findViewById(R.id.radioButton2);
-        RadioButton button3 = findViewById(R.id.radioButton3);
-        tv.setText(questionsList.get(currentQuestionIndex).getQuestion());
-        button0.setText(questionsList.get(currentQuestionIndex).getOption(0));
-        button1.setText(questionsList.get(currentQuestionIndex).getOption(1));
-        button2.setText(questionsList.get(currentQuestionIndex).getOption(2));
-        button3.setText(questionsList.get(currentQuestionIndex).getOption(3));
+        displayQuestion();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -89,49 +93,79 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void radioButtonClick(View view){
-        if (view.getId() == R.id.radioButton0) selectedAnswerIndex = 0;
-        if (view.getId() == R.id.radioButton1) selectedAnswerIndex = 1;
-        if (view.getId() == R.id.radioButton2) selectedAnswerIndex = 2;
-        if (view.getId() == R.id.radioButton3) selectedAnswerIndex = 3;
+        if (view.getId() == R.id.radioButton0) questionsList.get(currentQuestionIndex).setSavedAnswerIndex(0);
+        if (view.getId() == R.id.radioButton1) questionsList.get(currentQuestionIndex).setSavedAnswerIndex(1);
+        if (view.getId() == R.id.radioButton2) questionsList.get(currentQuestionIndex).setSavedAnswerIndex(2);
+        if (view.getId() == R.id.radioButton3) questionsList.get(currentQuestionIndex).setSavedAnswerIndex(3);
+        selectedAnswerIndex = questionsList.get(currentQuestionIndex).getSavedAnswerIndex();
     }
 
     public void displayQuestion(){
-        TextView tv = findViewById(R.id.questionDisplay);
-        tv.setText(questionsList.get(currentQuestionIndex).getQuestion()); //tv.setText(questionsList.get(currentQuestionIndex).getQuestion());
-        RadioButton rb = findViewById(R.id.radioButton0);
-        rb.setText(questionsList.get(currentQuestionIndex).getOption(0));
-        rb = findViewById(R.id.radioButton1);
-        rb.setText(questionsList.get(currentQuestionIndex).getOption(1));
-        rb = findViewById(R.id.radioButton2);
-        rb.setText(questionsList.get(currentQuestionIndex).getOption(2));
-        rb = findViewById(R.id.radioButton3);
-        rb.setText(questionsList.get(currentQuestionIndex).getOption(3));
+        Toast.makeText(getApplicationContext(), String.valueOf(questionsList.get(currentQuestionIndex).getCorrectAnswerIndex()), Toast.LENGTH_SHORT).show();
 
+        TextView tv = findViewById(R.id.questionDisplay);
+        tv.setText(questionsList.get(currentQuestionIndex).getQuestion());
+
+        TextView tv2 = findViewById(R.id.questionNumber);
+        String phrase = "Question " + (currentQuestionIndex + 1) + " of 10";
+        tv2.setText(phrase);
+
+        RadioButton rb0 = findViewById(R.id.radioButton0);
+        RadioButton rb1 = findViewById(R.id.radioButton1);
+        RadioButton rb2 = findViewById(R.id.radioButton2);
+        RadioButton rb3 = findViewById(R.id.radioButton3);
+
+        rb0.setText(questionsList.get(currentQuestionIndex).getOption(0));
+        rb1.setText(questionsList.get(currentQuestionIndex).getOption(1));
+        rb2.setText(questionsList.get(currentQuestionIndex).getOption(2));
+        rb3.setText(questionsList.get(currentQuestionIndex).getOption(3));
+
+        RadioGroup rg = findViewById(R.id.radioGroup);
+        rg.clearCheck();
+
+        selectedAnswerIndex = questionsList.get(currentQuestionIndex).getSavedAnswerIndex();
+
+        if (selectedAnswerIndex != -1) {
+            switch (selectedAnswerIndex) {
+                case 0:
+                    rb0.setChecked(true);
+                    break;
+                case 1:
+                    rb1.setChecked(true);
+                    break;
+                case 2:
+                    rb2.setChecked(true);
+                    break;
+                case 3:
+                    rb3.setChecked(true);
+                    break;
+            }
+        }
     }
+
+    private int calculateCorrectAnswers() {
+        int count = 0;
+        for (TriviaQuestion tq : questionsList){
+            if (tq.getCorrectAnswerIndex() == tq.getSavedAnswerIndex()){
+                count++;
+            }
+        }
+        return count;
+    }
+
     public void nextQuestion(View v){
         if (selectedAnswerIndex == -1) {
             return;
         }
 
-        //TO DO: if selectedAnswerIndex is the correct answer: correctAnswersCount++;
-        if (selectedAnswerIndex == questionsList.get(currentQuestionIndex).getCorrectAnswerIndex()){
-            correctAnswersCount++;
-        }
         currentQuestionIndex++;
 
         //TO DO:
         //IF currentQuestionIndex < size of the ArrayListQuestions
         if (currentQuestionIndex < questionsList.size()){
-            // clear radio button selection
-            selectedAnswerIndex = -1;
-            RadioGroup rg = findViewById(R.id.radioGroup);
-            rg.clearCheck();
-            //display the next question
             displayQuestion();
-        }
-        //ELSE
-        //start activity that displays results; send the value of correctAnswersCount
-         else{
+        } else{
+             int correctAnswersCount = calculateCorrectAnswers();
              Intent intent = new Intent(this, ResultActivity.class);
              intent.putExtra("correctAnswersCount", String.valueOf(correctAnswersCount));
              startActivity(intent);
@@ -141,9 +175,6 @@ public class GameActivity extends AppCompatActivity {
     public void previousQuestion(View v){
         if (currentQuestionIndex > 0){
             currentQuestionIndex--;
-            selectedAnswerIndex = -1;
-            RadioGroup rg = findViewById(R.id.radioGroup);
-            rg.clearCheck();
             displayQuestion();
         }
     }

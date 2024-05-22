@@ -179,7 +179,7 @@ Quentin Tarantino
 Christopher Nolan
 0
 Which actor starred in the movie "The Shawshank Redemption"?
-Morgan Freeman
+Denzel Washington
 Tim Robbins
 Tom Hanks
 Brad Pitt
@@ -399,7 +399,7 @@ Titanic
 The Revenant
 Inception
 The Wolf of Wall Street
-3
+1
 Who is the creator of the animated TV series "The Simpsons"?
 Seth MacFarlane
 Matt Groening
@@ -417,7 +417,7 @@ Beauxbatons
 Hogwarts
 Durmstrang
 Ilvermorny
-2
+1
 Which movie won the Academy Award for Best Picture in 2020?
 1917
 Parasite
@@ -435,7 +435,7 @@ Hercule Poirot
 Sherlock Holmes
 Miss Marple
 Philip Marlowe
-3
+1
 Which animated film features the song "Let It Go"?
 Moana
 Frozen
@@ -509,8 +509,8 @@ Emma Stone
 Natalie Portman
 2
 Which actor played the role of Morpheus in the film "The Matrix"?
-Laurence Fishburne
 Keanu Reeves
+Laurence Fishburne
 Hugo Weaving
 Carrie-Anne Moss
 1
@@ -521,11 +521,11 @@ Martin Scorsese
 Quentin Tarantino
 2
 What is the name of the female lead in the film "Pretty Woman"?
-Vivian Ward
-Julia Roberts
+Roberta Julise
 Samantha Jones
+Vivian Ward
 Elizabeth Bennett
-3
+2
 Which actor played the role of Luke Skywalker in the original "Star Wars" trilogy?
 Mark Hamill
 Harrison Ford
@@ -579,7 +579,7 @@ Vivian Ward
 Julia Roberts
 Elizabeth Bennett
 Samantha Jones
-2
+1
 Which actor played the role of Luke Skywalker in the original "Star Wars" trilogy?
 Mark Hamill
 Harrison Ford
@@ -611,16 +611,16 @@ Titanic
 Star Wars: The Force Awakens
 1
 Who directed the film "Jurassic Park"?
-Steven Spielberg
 James Cameron
 Christopher Nolan
+Steven Spielberg
 George Lucas
 2
 Which actor portrayed the character of Jack Sparrow in the "Pirates of the Caribbean" film series?
-Johnny Depp
+Geoffrey Rush
 Orlando Bloom
 Keira Knightley
-Geoffrey Rush
+Johnny Depp
 3
 Which TV series features a character named Walter White, who is a high school chemistry teacher turned methamphetamine manufacturer?
 Breaking Bad
@@ -629,11 +629,11 @@ The Walking Dead
 Game of Thrones
 0
 Which fictional city is the primary setting for the Batman comics?
-Gotham City
 Metropolis
 Central City
+Gotham City
 Star City
-0
+2
 Who wrote the novel "The Great Gatsby"?
 F. Scott Fitzgerald
 Ernest Hemingway
@@ -647,11 +647,11 @@ Natalie Portman
 Anne Hathaway
 1
 Which director is known for films such as "Pulp Fiction" and "Kill Bill"?
-Quentin Tarantino
 Martin Scorsese
 Stanley Kubrick
 Alfred Hitchcock
-0
+Quentin Tarantino
+3
 Which animated TV series follows the adventures of a boy named Finn and his magical dog Jake in the Land of Ooo?
 Adventure Time
 Rick and Morty
@@ -659,8 +659,8 @@ SpongeBob SquarePants
 The Simpsons
 0
 Which actor played the character of Neo in the film "The Matrix"?
-Keanu Reeves
 Tom Cruise
 Will Smith
 Brad Pitt
+Keanu Reeves
 3
