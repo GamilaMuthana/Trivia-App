@@ -24,7 +24,7 @@ public class ResultActivity extends AppCompatActivity {
         score = score + "/10";
         TextView tv = findViewById(R.id.scoreDisplay);
         tv.setText(score);
-        String face = "";
+        String face;
         if(scoreInt < 4){
             face = "☹️";
 
@@ -50,6 +50,11 @@ public class ResultActivity extends AppCompatActivity {
 
     public void goHome(View v) {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToCredits(View v) {
+        Intent intent = new Intent(this, CreditsActivity.class);
         startActivity(intent);
     }
 }

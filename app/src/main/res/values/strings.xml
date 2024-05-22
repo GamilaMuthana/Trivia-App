@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Trivia-App</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
@@ -9,7 +9,13 @@
     <string name="question_placeholder">question placeholder</string>
     <string name="x_10">x/10</string>
     <string name="option0">option0</string>
-    <string name="option1">option1</string>
+    <string name="option1" tools:ignore="Typos">option1</string>
     <string name="option2">option2</string>
     <string name="option3">option3</string>
+    <string name="four_square_trivia_app">Four Square Trivia App</string>
+    <string name="game_logo">game logo</string>
+    <string name="credits">By Gamila Muthana and Jonathan Skeete</string>
+    <string name="creditsLink">Credits</string>
+    <string name="play_again">Play Again</string>
+    <string name="smiley">☺️</string>
 </resources>
